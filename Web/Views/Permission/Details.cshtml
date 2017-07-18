@@ -1,0 +1,35 @@
+﻿@model ExampleDDD.Domain.Entities.tbpermission
+
+@{
+    ViewBag.Title = "Información permiso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Información sobre el permiso</h2>
+
+<div>
+    <h4>Información:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Identificador:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.identifytbpermission)
+        </dd>
+
+        <dt>
+            Nombre:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nametbpermission)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.identifytbpermission }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

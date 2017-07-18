@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ExampleDDD.Domain.Entities.tbpermission>
+
+@{
+    ViewBag.Title = "Permisos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Permisos</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Identificador:
+        </th>
+        <th>
+            Nombre:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.identifytbpermission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nametbpermission)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.identifytbpermission }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.identifytbpermission }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.identifytbpermission })
+        </td>
+    </tr>
+}
+
+</table>

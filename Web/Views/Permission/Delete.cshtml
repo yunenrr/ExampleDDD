@@ -1,0 +1,41 @@
+﻿@model ExampleDDD.Domain.Entities.tbpermission
+
+@{
+    ViewBag.Title = "Eliminar permiso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar permiso</h2>
+
+<h3>¿De verdad lo quieres eliminar?</h3>
+<div>
+    <h4>Información:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Identificador:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.identifytbpermission)
+        </dd>
+
+        <dt>
+            Nombre:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nametbpermission)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>
